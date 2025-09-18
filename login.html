@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image:
+        url('grass.png'),
+        url('gold-stones.jpg');
+      background-size: cover, cover;
+      background-repeat: no-repeat, no-repeat;
+      background-blend-mode: overlay;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      width: 350px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: goldenrod;
+    }
+
+    .login-box label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .login-box input,
+    .login-box select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-box .sex {
+      margin-top: 10px;
+    }
+
+    .login-box .sex input {
+      margin-right: 5px;
+    }
+
+    .login-box button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: goldenrod;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-box button:hover {
+      background-color: gold;
+      color: black;
+    }
+
+    /* Spinner overlay */
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .spinner {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid goldenrod;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading spinner overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="login-box">
+    <h2>User Login</h2>
+    <form id="loginForm" action="welcome.html" method="get">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" required />
+
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,15}" />
+
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required />
+
+      <label>Sex:</label>
+      <div class="sex">
+        <input type="radio" id="male" name="sex" value="male" required />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="sex" value="female" required />
+        <label for="female">Female</label>
+      </div>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const overlay = document.getElementById("loadingOverlay");
+
+    form.addEventListener("submit", function (e) {
+      // Show the spinner
+      overlay.style.display = "flex";
+
+      // Optional: Wait 1 second before submitting (for visual effect)
+      e.preventDefault(); // Prevent default for delay
+      setTimeout(() => {
+        form.submit(); // Submit the form after delay
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
