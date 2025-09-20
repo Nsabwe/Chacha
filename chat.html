@@ -1,0 +1,33 @@
+<!-- chat.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat - Liphava Christo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="chat-page">
+  <header>
+    <h2>Liphava Christo Chat</h2>
+    <button class="btn logout-btn">Logout</button>
+  </header>
+
+  <section class="chat-container">
+    <div class="inbox" id="inbox">
+      <!-- Messages will appear here -->
+    </div>
+
+    <div class="chat-controls">
+      <textarea id="messageInput" placeholder="Write your message..."></textarea>
+      
+      <input type="text" id="recipientInput" placeholder="Send to (leave blank for all)">
+      
+      <input type="file" id="imageInput" accept="image/*">
+      <button class="btn" id="sendImageBtn">Send Image</button>
+
+      <button class="btn" id="recordVoiceBtn">🎤 Voice</button>
+      <button class="btn" id="sendMessageBtn">Send</button>
+    </div>
+  </section>
+</body>
+</html>
