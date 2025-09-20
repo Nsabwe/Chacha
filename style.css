@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.animated-title {
+  font-size: 3rem;
+  animation: bounce 2s infinite;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px green;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.btn {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #218838;
+}
+
+.form-container {
+  margin: 10% auto;
+  width: 300px;
+  background: rgba(0, 100, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.chat-page header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgba(0, 80, 0, 0.8);
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.inbox {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  height: 400px;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+
+.chat-controls {
+  margin-top: 10px;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
